@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class CarBbookPositiveTest {
+public class TC02CarNegative {
 	WebDriver driver;
 
 	@Test
@@ -17,6 +17,7 @@ public class CarBbookPositiveTest {
 
 		WebDriverManager.chromedriver().setup();
 		WebDriver driver = new ChromeDriver();
+		System.out.println("Negative Test Case Submit without filling all required Details");
 		driver.manage().window().maximize();
 		driver.get("https://car.iselect.com.au/car/compare-car-insurance/gatewayStore");
 		Thread.sleep(5000);
@@ -41,28 +42,8 @@ public class CarBbookPositiveTest {
 		Actions act1 = new Actions(driver);
 		act1.moveToElement(ele2).click().build().perform();
 		Thread.sleep(5000);
-		driver.findElement(By.xpath("//*[@id=\"bui-12\"]/div/div/ul/li[1]/div")).click();
-
-		WebElement ele23 = driver
-				.findElement(By.xpath("//*[@id=\"root\"]/div[1]/section[2]/div/div[3]/div/div/div/div"));
-
-		Actions act12 = new Actions(driver);
-		act12.moveToElement(ele23).click().build().perform();
-		Thread.sleep(5000);
-		driver.findElement(By.xpath("//*[@id=\"bui-13\"]/div/div/ul/li[1]")).click();
-
-		driver.findElement(By.xpath("//*[@id=\"root\"]/div[1]/section[2]/div/div[5]/div/button[2]")).click();
-		driver.findElement(By.xpath("//*[@id=\"root\"]/div[1]/section[2]/div/div[8]/div[2]/div/div[1]/button[2]"))
-				.click();
-
-		WebElement ele444 = driver
-				.findElement(By.xpath("//*[@id=\"root\"]/div[1]/section[2]/div/div[10]/div/div/div/div"));
-
-		Actions act123 = new Actions(driver);
-		act123.moveToElement(ele444).click().build().perform();
-		Thread.sleep(5000);
-		driver.findElement(By.xpath("//*[@id=\"bui-19\"]/div/div/ul/li[2]/div")).click();
 		driver.findElement(By.xpath("//*[@id=\"root\"]/div[1]/section[3]/div/div/div[1]/div/label/span")).click();
+		
 
 	}
 
